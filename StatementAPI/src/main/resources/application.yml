@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    username: root 
+    password:  
+    url: jdbc:mysql://localhost:3306/cerner
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#
+#security:
+#  oauth2:
+#    client:
+#      client-id: 4c35d09e60f8ee72c3c2
+#      client-secret: 02ac95e2aa6a68328ff6d865b7fa2ff775effc58
+#      access-token-uri: https://github.com/login/oauth/access_token
+#      user-authorization-uri: https://github.com/login/oauth/authorize
+#      client-authentication-scheme: form
+#    resource:
+#      user-info-uri: https://api.github.com/user
+
+server:
+  port: 9090
