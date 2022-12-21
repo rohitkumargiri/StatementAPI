@@ -32,12 +32,8 @@ public class StatementSearchController {
 	public ResponseEntity<Object> getStatementSettingsById(
 			@PathVariable("settingId") String settingId) {
 		Optional<StatementSettingsRelationships> settingsById = statementService.getSettingsById(settingId);
-		if(settingsById.isPresent()) {
 			return new ResponseEntity<>(settingsById,HttpStatus.OK);
-		}else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-
+		
 	}
 	
 	@GetMapping("/{statementId}")

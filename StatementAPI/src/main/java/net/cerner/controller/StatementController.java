@@ -37,9 +37,6 @@ public class StatementController {
 		
 	}
 	
-	
-	
-	
 	@PutMapping("/statements/{statementId}")
 	@ApiOperation(value = "Update the statement")
 	public ResponseEntity<StatementResponseDTO> updateStatementById(@PathVariable("statementId")String statementId, @RequestBody StatementRequestDTO dto){

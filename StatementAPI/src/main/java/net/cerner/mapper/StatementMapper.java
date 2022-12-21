@@ -1,12 +1,10 @@
 package net.cerner.mapper;
 
-import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
 import net.cerner.dto.StatementRequestDTO;
-import net.cerner.entity.Model;
 import net.cerner.entity.Statement;
 
 @Component
@@ -45,6 +43,31 @@ public class StatementMapper {
 	
 	public StatementRequestDTO toDto(Statement statement) {
 	
-		return StatementRequestDTO.builder().recordName(statement.getRecordName()).build();
+		return StatementRequestDTO.builder().recordName(statement.getRecordName())
+											.scopeId(statement.getScopeId())
+											.scope(statement.getScopeName())
+											.statementAlias(statement.getStatementAlias())
+											.statementDisplay(statement.getStatementDisplay())
+											.statementText(statement.getStatementText())
+											.statementDependencyAlias(statement.getStatementDependencyAlias())
+											.recordOperations(statement.getRecordOperations())
+											.dateOperations(statement.getDateOperations())
+											.requiredOperations(statement.getRequiredOperations())
+											.selector(statement.getSelector())
+											.cardinality(statement.getCardinality())
+											.withDistinct(statement.getWithDistinct())
+											.negateStatement(false)
+											.tags(statement.getTags())
+											.frequencyType(statement.getFrequencyType())
+											.frequencyValue(statement.getFrequencyValue())
+											.status(statement.getStatus())
+											.version(statement.getVersion())
+											.baseVersion(statement.getBaseVersion())
+											.author(statement.getAuthor())
+											.createdAt(statement.getCreatedAt())
+											.createdBy(statement.getCreatedBy())
+											.updatedAt(statement.getUpdatedAt())
+											.updatedBy(statement.getUpdatedBy())
+											.build();
 	}
 }
